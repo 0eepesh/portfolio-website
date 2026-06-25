@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 py-8 md:py-16">
       <SEO
-        title="Deepesh Sonkar | Full-Stack Web Developer & Web Development Specialist"
-        description="Hi, I'm Deepesh Sonkar, a professional full-stack web developer. I build fast, scalable, and user-centric web applications and designs. Contact me for freelance projects."
-        keywords="Deepesh Sonkar, Deepesh, Web Development, Full-Stack Web Developer, Freelance Developer, Custom Web Applications"
+        title="Deepesh | Full-Stack Web Developer & Web Development Specialist"
+        description="Hi, I'm Deepesh, a professional full-stack web developer. I build fast, scalable, and user-centric web applications and designs. Contact me for freelance projects."
+        keywords="Deepesh, Web Development, Full-Stack Web Developer, Freelance Developer, Custom Web Applications"
       />
       {/* Left Pitch Column */}
       <div className="flex-1 text-left space-y-6 max-w-2xl">

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 export default function SEO({ title, description, keywords }) {
   const { pathname } = useLocation();
-  const siteUrl = "https://deepeshsonkar.com"; // Default placeholder domain, will resolve dynamically
+  const siteUrl = "https://deepesh.com"; // Default placeholder domain, will resolve dynamically
 
   useEffect(() => {
     // 1. Update document title

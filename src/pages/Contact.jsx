@@ -67,9 +67,9 @@ export default function Contact() {
   return (
     <div className="space-y-12 py-8 md:py-16">
       <SEO
-        title="Contact Deepesh Sonkar | Freelance Web Developer"
-        description="Have a web development project or custom software idea? Get in touch with Deepesh Sonkar. Send a message or connect via email, WhatsApp, or Instagram."
-        keywords="Contact Web Developer, Hire React Developer, Deepesh Sonkar Contact, Web Development Projects Inquiry"
+        title="Contact Deepesh | Freelance Web Developer"
+        description="Have a web development project or custom software idea? Get in touch with Deepesh. Send a message or connect via email, WhatsApp, or Instagram."
+        keywords="Contact Web Developer, Hire React Developer, Deepesh Contact, Web Development Projects Inquiry"
       />
       {/* Title section */}
       <ScrollReveal direction="up" delay={100}>
@@ -231,7 +231,7 @@ export default function Contact() {
               <div className="space-y-4">
                 {/* Email */}
                 <a
-                  href="mailto:deepeshsonkar20@gmail.com"
+                  href="mailto:deepesh20@gmail.com"
                   className="flex items-center gap-4 p-4 rounded-xl bg-zinc-900/40 border border-zinc-900 hover:border-zinc-800 hover:bg-zinc-900/80 transition-all group"
                 >
                   <div className="p-3 bg-red-500/10 text-red-400 rounded-xl group-hover:scale-110 transition-transform">
@@ -242,7 +242,7 @@ export default function Contact() {
                       Email Me
                     </p>
                     <p className="text-sm font-bold text-zinc-200 group-hover:text-accent-emerald transition-colors">
-                      deepeshsonkar20@gmail.com
+                      deepesh20@gmail.com
                     </p>
                   </div>
                 </a>

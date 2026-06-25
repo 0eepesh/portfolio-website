@@ -1,4 +1,4 @@
-# Deepesh Sonkar | Professional Full-Stack Developer Portfolio
+# Deepesh | Professional Full-Stack Developer Portfolio
 
 A premium, modern developer portfolio website designed with a minimal tech luxury theme (warm amber golds, sleek bronzes, and soft cream/white backgrounds). The site features fluid layouts, responsive navigation, scroll-triggered animations, and a simulated enterprise dashboard demo.
 

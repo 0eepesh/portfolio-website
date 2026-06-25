@@ -8,9 +8,9 @@ export default function Services() {
   return (
     <div className="space-y-12 py-8 md:py-16">
       <SEO
-        title="Web Development & UI/UX Design Services | Deepesh Sonkar"
-        description="Explore the web development and UI/UX design services offered by Deepesh Sonkar. I build fast, scalable, and responsive custom web applications."
-        keywords="Web Development Services, UI/UX Design, Custom Web Apps, Freelance Web Developer, Deepesh Sonkar Services"
+        title="Web Development & UI/UX Design Services | Deepesh"
+        description="Explore the web development and UI/UX design services offered by Deepesh. I build fast, scalable, and responsive custom web applications."
+        keywords="Web Development Services, UI/UX Design, Custom Web Apps, Freelance Web Developer, Deepesh Services"
       />
       {/* Title section */}
       <ScrollReveal direction="up" delay={100}>

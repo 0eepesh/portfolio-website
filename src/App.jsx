@@ -151,7 +151,7 @@ export default function App() {
       <footer className="w-full py-8 border-t border-zinc-900/80 bg-zinc-950/50">
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p className="text-zinc-550 text-xs font-medium">
-            &copy; {new Date().getFullYear()} Deepesh Sonkar. All rights
+            &copy; {new Date().getFullYear()} Deepesh. All rights
             reserved.
           </p>
 
@@ -167,7 +167,7 @@ export default function App() {
               <Github size={16} />
             </a>
             <a
-              href="mailto:deepeshsonkar20@gmail.com"
+              href="mailto:deepesh20@gmail.com"
               className="p-2 rounded-lg bg-zinc-900 hover:bg-zinc-850 border border-zinc-900 hover:border-zinc-800 text-zinc-500 hover:text-zinc-300 transition-all"
               aria-label="Email"
             >

@@ -37,9 +37,9 @@ export default function Projects() {
   return (
     <div className="space-y-12 py-8 md:py-16 relative">
       <SEO
-        title="Web Development Projects & Featured Work | Deepesh Sonkar"
-        description="Browse the web development portfolio of Deepesh Sonkar, featuring full-stack applications, task management systems, and enterprise dashboard simulations."
-        keywords="Web Developer Portfolio, Full-Stack Projects, Deepesh Sonkar Projects, React Applications, Next.js Demo"
+        title="Web Development Projects & Featured Work | Deepesh"
+        description="Browse the web development portfolio of Deepesh, featuring full-stack applications, task management systems, and enterprise dashboard simulations."
+        keywords="Web Developer Portfolio, Full-Stack Projects, Deepesh Projects, React Applications, Next.js Demo"
       />
       {/* Title section */}
       <ScrollReveal direction="up" delay={100}>
