@@ -1,82 +1,101 @@
-import { useState } from 'react';
-import { Menu, X, ArrowUpRight, Github, Mail, MessageSquare } from 'lucide-react';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import { useState, useEffect } from "react";
+import {
+  Menu,
+  X,
+  ArrowUpRight,
+  Github,
+  Mail,
+  MessageSquare,
+} from "lucide-react";
+import {
+  Routes,
+  Route,
+  Navigate,
+  Link,
+  NavLink,
+  useLocation,
+} from "react-router-dom";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function App() {
-  const [page, setPage] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', id: 'home' },
-    { name: 'Services', id: 'services' },
-    { name: 'Projects', id: 'projects' },
-    { name: 'Contact', id: 'contact' },
+    { name: "Home", id: "home", path: "/" },
+    { name: "Services", id: "services", path: "/services" },
+    { name: "Projects", id: "projects", path: "/projects" },
+    { name: "Contact", id: "contact", path: "/contact" },
   ];
-
-  const renderPage = () => {
-    switch (page) {
-      case 'home':
-        return <Home setPage={setPage} />;
-      case 'services':
-        return <Services />;
-      case 'projects':
-        return <Projects />;
-      case 'contact':
-        return <Contact />;
-      default:
-        return <Home setPage={setPage} />;
-    }
-  };
 
   return (
     <div className="min-h-screen bg-radial-gradient flex flex-col justify-between selection:bg-accent-emerald/30 selection:text-white">
+      <ScrollToTop />
       {/* Navbar Header */}
       <header className="sticky top-0 z-40 w-full glass border-b border-zinc-900/80">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo */}
-          <button 
-            onClick={() => { setPage('home'); setMobileMenuOpen(false); }}
-            className="flex items-center gap-2 cursor-pointer group"
+          <Link
+            to="/"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-2.5 cursor-pointer group"
           >
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-accent-emerald to-accent-indigo flex items-center justify-center font-bold text-zinc-950 text-lg shadow-lg shadow-emerald-500/10 group-hover:scale-105 transition-transform font-display">
-              D
-            </div>
+            <img
+              src="/pfp.png"
+              alt="deepesh"
+              className="h-9 w-9 rounded-xl object-cover shadow-lg shadow-emerald-500/10 group-hover:scale-105 transition-transform"
+            />
             <span className="text-zinc-100 font-extrabold text-lg tracking-tight font-display group-hover:text-white transition-colors">
-              Deepesh Sonkar
+              deepesh
             </span>
-          </button>
+          </Link>
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-8">
             {navigation.map((item) => (
-              <button
+              <NavLink
                 key={item.id}
-                onClick={() => setPage(item.id)}
-                className={`text-sm font-semibold tracking-wide transition-colors cursor-pointer relative py-2 ${
-                  page === item.id 
-                    ? 'text-accent-emerald' 
-                    : 'text-zinc-400 hover:text-zinc-200'
-                }`}
+                to={item.path}
+                className={({ isActive }) =>
+                  `text-sm font-semibold tracking-wide transition-colors cursor-pointer relative py-2 ${
+                    isActive
+                      ? "text-accent-emerald"
+                      : "text-zinc-400 hover:text-zinc-200"
+                  }`
+                }
               >
-                {item.name}
-                {page === item.id && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-accent-emerald to-accent-indigo rounded-full"></span>
+                {({ isActive }) => (
+                  <>
+                    {item.name}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-accent-emerald to-accent-indigo rounded-full"></span>
+                    )}
+                  </>
                 )}
-              </button>
+              </NavLink>
             ))}
           </nav>
 
           {/* CTA Header Button */}
-          <button
-            onClick={() => setPage('contact')}
+          <Link
+            to="/contact"
             className="hidden md:flex items-center gap-1.5 px-4.5 py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-white font-bold text-xs border border-zinc-850 hover:border-zinc-800 hover:scale-[1.02] cursor-pointer transition-all shadow-md"
           >
             Let's Talk
             <ArrowUpRight size={14} />
-          </button>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -93,67 +112,70 @@ export default function App() {
         <div className="fixed inset-0 top-20 z-30 w-full bg-zinc-950/95 backdrop-blur-lg border-b border-zinc-900 md:hidden animate-fade-in">
           <nav className="flex flex-col p-6 gap-6 text-left">
             {navigation.map((item) => (
-              <button
+              <NavLink
                 key={item.id}
-                onClick={() => {
-                  setPage(item.id);
-                  setMobileMenuOpen(false);
-                }}
-                className={`text-lg font-bold py-2 border-b border-zinc-900/50 cursor-pointer ${
-                  page === item.id 
-                    ? 'text-accent-emerald' 
-                    : 'text-zinc-400'
-                }`}
+                to={item.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className={({ isActive }) =>
+                  `text-lg font-bold py-2 border-b border-zinc-900/50 cursor-pointer ${
+                    isActive ? "text-accent-emerald" : "text-zinc-400"
+                  }`
+                }
               >
                 {item.name}
-              </button>
+              </NavLink>
             ))}
-            <button
-              onClick={() => {
-                setPage('contact');
-                setMobileMenuOpen(false);
-              }}
-              className="mt-4 px-5 py-3 rounded-xl bg-gradient-to-r from-accent-emerald to-accent-indigo text-zinc-950 font-bold text-sm text-center shadow-lg"
+            <Link
+              to="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-4 px-5 py-3 rounded-xl bg-gradient-to-r from-accent-emerald to-accent-indigo text-white font-bold text-sm text-center shadow-lg"
             >
               Let's Talk
-            </button>
+            </Link>
           </nav>
         </div>
       )}
 
       {/* Main Work Area */}
       <main className="flex-grow max-w-6xl w-full mx-auto px-6 py-8 md:py-12">
-        {renderPage()}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
 
       {/* Footer */}
       <footer className="w-full py-8 border-t border-zinc-900/80 bg-zinc-950/50">
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p className="text-zinc-550 text-xs font-medium">
-            &copy; {new Date().getFullYear()} Deepesh Sonkar. All rights reserved.
+            &copy; {new Date().getFullYear()} Deepesh Sonkar. All rights
+            reserved.
           </p>
 
           {/* Quick Footer Links */}
           <div className="flex gap-4">
-            <a 
-              href="https://github.com/0eepesh" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://github.com/0eepesh"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 rounded-lg bg-zinc-900 hover:bg-zinc-850 border border-zinc-900 hover:border-zinc-800 text-zinc-500 hover:text-zinc-300 transition-all"
               aria-label="GitHub"
             >
               <Github size={16} />
             </a>
-            <a 
-              href="mailto:deepeshsonkar20@gmail.com" 
+            <a
+              href="mailto:deepeshsonkar20@gmail.com"
               className="p-2 rounded-lg bg-zinc-900 hover:bg-zinc-850 border border-zinc-900 hover:border-zinc-800 text-zinc-500 hover:text-zinc-300 transition-all"
               aria-label="Email"
             >
               <Mail size={16} />
             </a>
-            <a 
-              href="https://wa.link/gh09g1" 
-              target="_blank" 
+            <a
+              href="https://wa.link/gh09g1"
+              target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-zinc-900 hover:bg-zinc-850 border border-zinc-900 hover:border-zinc-800 text-zinc-500 hover:text-zinc-300 transition-all"
               aria-label="WhatsApp"

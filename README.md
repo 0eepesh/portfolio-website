@@ -1,16 +1,69 @@
-# React + Vite
+# Deepesh Sonkar | Professional Full-Stack Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, modern developer portfolio website designed with a minimal tech luxury theme (warm amber golds, sleek bronzes, and soft cream/white backgrounds). The site features fluid layouts, responsive navigation, scroll-triggered animations, and a simulated enterprise dashboard demo.
 
-Currently, two official plugins are available:
+## 🛠️ Technology Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vite.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Routing**: [React Router v7](https://reactrouter.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Contact Form Integration**: [Web3Forms](https://web3forms.com/)
 
-## React Compiler
+## 📂 Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+├── public/                 # Static assets (images, redirects configuration)
+│   ├── favicon.svg         # Favicon
+│   ├── hero.png            # Hero section illustration
+│   ├── pfp.png             # Profile photo
+│   ├── _redirects          # Netlify routing configuration
+├── src/
+│   ├── components/
+│   │   └── ScrollReveal.jsx # Intersection Observer scroll animation component
+│   ├── pages/
+│   │   ├── Home.jsx        # Landing hero page with dynamic pitch and stats
+│   │   ├── Services.jsx    # Full-stack developer and UI/UX design service offerings
+│   │   ├── Projects.jsx    # Project grid and Acme Corp dashboard simulation modal
+│   │   └── Contact.jsx     # Web3Forms-integrated contact form
+│   ├── App.jsx             # Main routing setup and layout (Header/Navbar/Footer)
+│   ├── index.css           # Global styles and custom Tailwind v4 theme definitions
+│   └── main.jsx            # Application entrypoint
+├── eslint.config.js        # ESLint rules
+├── vite.config.js          # Vite config with React and Tailwind v4 plugins
+├── vercel.json             # Vercel deployment routing configuration
+└── package.json            # Scripts & dependencies
+```
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) installed (LTS recommended).
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd portfolio-website
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Setup environment variables (optional for contact form):
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
+   ```
+
+### Development Scripts
+
+- **Start Dev Server**: `npm run dev`
+- **Build Production Bundle**: `npm run build`
+- **Lint Code**: `npm run lint`
+- **Preview Production Build**: `npm run preview`
